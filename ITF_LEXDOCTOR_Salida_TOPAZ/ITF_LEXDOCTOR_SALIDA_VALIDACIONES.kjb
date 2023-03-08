@@ -378,7 +378,7 @@
       <attributes/>
       <valuetype>variable</valuetype>
       <fieldname/>
-      <variablename>${ID_TICKET}</variablename>
+      <variablename>${TICKET}</variablename>
       <fieldtype>number</fieldtype>
       <mask/>
       <comparevalue/>
@@ -400,7 +400,7 @@
       <description/>
       <type>EVAL</type>
       <attributes/>
-      <script>!isNaN(parent_job.getVariable("ID_TICKET"));</script>
+      <script>!isNaN(parent_job.getVariable("TICKET"));</script>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
@@ -415,7 +415,7 @@
       <attributes/>
       <valuetype>variable</valuetype>
       <fieldname/>
-      <variablename>${Top.Output}</variablename>
+      <variablename>${Output}</variablename>
       <fieldtype>string</fieldtype>
       <mask/>
       <comparevalue/>

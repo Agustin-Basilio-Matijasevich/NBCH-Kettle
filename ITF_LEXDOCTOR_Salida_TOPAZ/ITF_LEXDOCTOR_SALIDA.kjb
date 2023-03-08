@@ -325,7 +325,7 @@
       <fields>
         <field>
           <variable_name>RCS</variable_name>
-          <variable_value>${Top.Output}LexDoctor</variable_value>
+          <variable_value>${Output}LexDoctor</variable_value>
           <variable_type>CURRENT_JOB</variable_type>
         </field>
       </fields>
@@ -716,28 +716,28 @@ Fecha: ${fecha}
       <filename/>
       <fields>
         <field>
-          <name>${Top.Repository}ITF_FIN_ERR.ktr</name>
+          <name>${Repository}ITF_FIN_ERR.ktr</name>
         </field>
         <field>
-          <name>${Top.Repository}ITF_RETORNO_GENERICO.ktr</name>
+          <name>${Repository}ITF_RETORNO_GENERICO.ktr</name>
         </field>
         <field>
-          <name>${Top.Repository}ITF_LEXDOCTOR_SALIDA_VALIDACIONES.kjb</name>
+          <name>${Repository}ITF_LEXDOCTOR_SALIDA_VALIDACIONES.kjb</name>
         </field>
         <field>
-          <name>${Top.Repository}ITF_LEXDOCTOR_SALIDA_VALIDACIONES_GVF.ktr</name>
+          <name>${Repository}ITF_LEXDOCTOR_SALIDA_VALIDACIONES_GVF.ktr</name>
         </field>
         <field>
-          <name>${Top.Repository}ITF_LEXDOCTOR_SALIDA_LC.ktr</name>
+          <name>${Repository}ITF_LEXDOCTOR_SALIDA_LC.ktr</name>
         </field>
         <field>
-          <name>${Top.Repository}ITF_LEXDOCTOR_SALIDA_FF.ktr</name>
+          <name>${Repository}ITF_LEXDOCTOR_SALIDA_FF.ktr</name>
         </field>
         <field>
-          <name>${Top.Repository}ITF_LEXDOCTOR_SALIDA_PYG.ktr</name>
+          <name>${Repository}ITF_LEXDOCTOR_SALIDA_PYG.ktr</name>
         </field>
         <field>
-          <name>${Top.Repository}ITF_LEXDOCTOR_VR.ktr</name>
+          <name>${Repository}ITF_LEXDOCTOR_VR.ktr</name>
         </field>
       </fields>
       <parallel>N</parallel>
@@ -1119,17 +1119,17 @@ Ruta de archivo de Salida: ${RCS}
       <file_variable_type>JVM</file_variable_type>
       <fields>
         <field>
-          <variable_name>ID_TICKET</variable_name>
+          <variable_name>TICKET</variable_name>
           <variable_value>${ID_TICKET}</variable_value>
           <variable_type>JVM</variable_type>
         </field>
         <field>
-          <variable_name>Top.Repository</variable_name>
+          <variable_name>Repository</variable_name>
           <variable_value>${Top.Repository}</variable_value>
           <variable_type>JVM</variable_type>
         </field>
         <field>
-          <variable_name>Top.Output</variable_name>
+          <variable_name>Output</variable_name>
           <variable_value>${Top.Output}</variable_value>
           <variable_type>JVM</variable_type>
         </field>
