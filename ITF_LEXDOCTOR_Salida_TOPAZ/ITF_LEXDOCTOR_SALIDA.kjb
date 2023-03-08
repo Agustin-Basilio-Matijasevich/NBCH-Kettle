@@ -310,7 +310,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>32</xloc>
+      <xloc>0</xloc>
       <yloc>464</yloc>
       <attributes_kjc/>
     </entry>
@@ -1109,6 +1109,38 @@ Ruta de archivo de Salida: ${RCS}
       <yloc>464</yloc>
       <attributes_kjc/>
     </entry>
+    <entry>
+      <name>Set Var Entorno</name>
+      <description/>
+      <type>SET_VARIABLES</type>
+      <attributes/>
+      <replacevars>Y</replacevars>
+      <filename/>
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+        <field>
+          <variable_name>ID_TICKET</variable_name>
+          <variable_value>${ID_TICKET}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>Top.Repository</variable_name>
+          <variable_value>${Top.Repository}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>Top.Output</variable_name>
+          <variable_value>${Top.Output}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>96</xloc>
+      <yloc>464</yloc>
+      <attributes_kjc/>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -1374,12 +1406,21 @@ Ruta de archivo de Salida: ${RCS}
     </hop>
     <hop>
       <from>Start</from>
-      <to>Set Ruta Carpeta Salida</to>
+      <to>Set Var Entorno</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Set Var Entorno</from>
+      <to>Set Ruta Carpeta Salida</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>
