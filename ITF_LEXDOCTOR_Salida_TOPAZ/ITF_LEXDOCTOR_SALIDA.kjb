@@ -1121,17 +1121,17 @@ Ruta de archivo de Salida: ${RCS}
         <field>
           <variable_name>TICKET</variable_name>
           <variable_value>${ID_TICKET}</variable_value>
-          <variable_type>JVM</variable_type>
+          <variable_type>ROOT_JOB</variable_type>
         </field>
         <field>
           <variable_name>Repository</variable_name>
           <variable_value>${Top.Repository}</variable_value>
-          <variable_type>JVM</variable_type>
+          <variable_type>ROOT_JOB</variable_type>
         </field>
         <field>
           <variable_name>Output</variable_name>
           <variable_value>${Top.Output}</variable_value>
-          <variable_type>JVM</variable_type>
+          <variable_type>ROOT_JOB</variable_type>
         </field>
       </fields>
       <parallel>N</parallel>
