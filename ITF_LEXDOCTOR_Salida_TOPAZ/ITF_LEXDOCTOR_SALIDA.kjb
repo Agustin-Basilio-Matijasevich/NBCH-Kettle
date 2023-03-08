@@ -319,7 +319,7 @@
       <description/>
       <type>SET_VARIABLES</type>
       <attributes/>
-      <replacevars>Y</replacevars>
+      <replacevars>N</replacevars>
       <filename/>
       <file_variable_type>JVM</file_variable_type>
       <fields>
@@ -365,11 +365,6 @@
         <field>
           <variable_name>Top.TypeMSG</variable_name>
           <variable_value>E</variable_value>
-          <variable_type>ROOT_JOB</variable_type>
-        </field>
-        <field>
-          <variable_name>TICKET</variable_name>
-          <variable_value>${ID_TICKET}</variable_value>
           <variable_type>ROOT_JOB</variable_type>
         </field>
         <field>
@@ -440,7 +435,7 @@ Fecha: ${fecha}
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Top.Repository}ITF_FIN_ERR.ktr</filename>
+      <filename>${Repository}ITF_FIN_ERR.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -479,7 +474,7 @@ Fecha: ${fecha}
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Top.Repository}ITF_RETORNO_GENERICO.ktr</filename>
+      <filename>${Repository}ITF_RETORNO_GENERICO.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -558,7 +553,7 @@ Fecha: ${fecha}
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Top.Repository}ITF_LEXDOCTOR_SALIDA_FF.ktr</filename>
+      <filename>${Repository}ITF_LEXDOCTOR_SALIDA_FF.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -602,7 +597,7 @@ Fecha: ${fecha}
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Top.Repository}ITF_RETORNO_GENERICO.ktr</filename>
+      <filename>${Repository}ITF_RETORNO_GENERICO.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -651,11 +646,6 @@ Fecha: ${fecha}
         <field>
           <variable_name>Top.TypeMSG</variable_name>
           <variable_value>E</variable_value>
-          <variable_type>ROOT_JOB</variable_type>
-        </field>
-        <field>
-          <variable_name>TICKET</variable_name>
-          <variable_value>${ID_TICKET}</variable_value>
           <variable_type>ROOT_JOB</variable_type>
         </field>
         <field>
@@ -767,11 +757,6 @@ Fecha: ${fecha}
           <variable_type>ROOT_JOB</variable_type>
         </field>
         <field>
-          <variable_name>TICKET</variable_name>
-          <variable_value>${ID_TICKET}</variable_value>
-          <variable_type>ROOT_JOB</variable_type>
-        </field>
-        <field>
           <variable_name>COD_RETORNO</variable_name>
           <variable_value>99</variable_value>
           <variable_type>ROOT_JOB</variable_type>
@@ -801,7 +786,7 @@ Fecha: ${fecha}
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Top.Repository}ITF_LEXDOCTOR_SALIDA_LC.ktr</filename>
+      <filename>${Repository}ITF_LEXDOCTOR_SALIDA_LC.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -864,7 +849,7 @@ Fecha: ${fecha}
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Top.Repository}ITF_LEXDOCTOR_SALIDA_PYG.ktr</filename>
+      <filename>${Repository}ITF_LEXDOCTOR_SALIDA_PYG.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -903,7 +888,7 @@ Fecha: ${fecha}
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>${Top.Repository}ITF_LEXDOCTOR_VR.ktr</filename>
+      <filename>${Repository}ITF_LEXDOCTOR_VR.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -955,11 +940,6 @@ Fecha: ${fecha}
           <variable_type>ROOT_JOB</variable_type>
         </field>
         <field>
-          <variable_name>TICKET</variable_name>
-          <variable_value>${ID_TICKET}</variable_value>
-          <variable_type>ROOT_JOB</variable_type>
-        </field>
-        <field>
           <variable_name>COD_RETORNO</variable_name>
           <variable_value>99</variable_value>
           <variable_type>ROOT_JOB</variable_type>
@@ -1002,11 +982,6 @@ Fecha: ${fecha}
           <variable_type>ROOT_JOB</variable_type>
         </field>
         <field>
-          <variable_name>TICKET</variable_name>
-          <variable_value>${ID_TICKET}</variable_value>
-          <variable_type>ROOT_JOB</variable_type>
-        </field>
-        <field>
           <variable_name>COD_RETORNO</variable_name>
           <variable_value>99</variable_value>
           <variable_type>ROOT_JOB</variable_type>
@@ -1036,7 +1011,7 @@ Fecha: ${fecha}
       <attributes/>
       <specification_method>filename</specification_method>
       <job_object_id/>
-      <filename>${Top.Repository}ITF_LEXDOCTOR_SALIDA_VALIDACIONES.kjb</filename>
+      <filename>${Repository}ITF_LEXDOCTOR_SALIDA_VALIDACIONES.kjb</filename>
       <jobname/>
       <directory/>
       <arg_from_previous>N</arg_from_previous>
@@ -1100,12 +1075,44 @@ Ruta de archivo de Salida: ${RCS}
       <description/>
       <type>DELETE_FILE</type>
       <attributes/>
-      <filename>${Top.Output}LexDoctor/TEMPORAL.csv</filename>
+      <filename>${Output}LexDoctor/TEMPORAL.csv</filename>
       <fail_if_file_not_exists>N</fail_if_file_not_exists>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
       <xloc>2496</xloc>
+      <yloc>464</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Set VAR Entorno</name>
+      <description/>
+      <type>SET_VARIABLES</type>
+      <attributes/>
+      <replacevars>N</replacevars>
+      <filename/>
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+        <field>
+          <variable_name>TICKET</variable_name>
+          <variable_value>${ID_TICKET}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>Repository</variable_name>
+          <variable_value>${Top.Repository}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+        <field>
+          <variable_name>Output</variable_name>
+          <variable_value>${Top.Output}</variable_value>
+          <variable_type>JVM</variable_type>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>96</xloc>
       <yloc>464</yloc>
       <attributes_kjc/>
     </entry>
@@ -1374,12 +1381,21 @@ Ruta de archivo de Salida: ${RCS}
     </hop>
     <hop>
       <from>Start</from>
-      <to>Set Ruta Carpeta Salida</to>
+      <to>Set VAR Entorno</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Set VAR Entorno</from>
+      <to>Set Ruta Carpeta Salida</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>
