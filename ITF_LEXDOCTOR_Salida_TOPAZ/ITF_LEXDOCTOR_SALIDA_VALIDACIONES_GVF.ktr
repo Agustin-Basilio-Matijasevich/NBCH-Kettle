@@ -861,7 +861,7 @@ V9.4</note>
     <limitRows>Y</limitRows>
     <limitRowsNumber>1</limitRowsNumber>
     <logmessage>***WARNING***
-Ticket: ${ID_TICKET}
+Ticket: ${TICKET}
 Archivo: ${Internal.Transformation.Name}
 Fecha Igual a "0".
 Se Leera toda la Base de Datos.</logmessage>
@@ -903,7 +903,7 @@ Se Leera toda la Base de Datos.</logmessage>
     <limitRows>Y</limitRows>
     <limitRowsNumber>1</limitRowsNumber>
     <logmessage>***Warning***
-Ticket: ${ID_TICKET}
+Ticket: ${TICKET}
 Archivo: ${Internal.Transformation.Name}
 Fecha Distinta de "0".
 Se filtrara la Lectura a la Base de Datos.</logmessage>
