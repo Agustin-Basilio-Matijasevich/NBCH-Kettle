@@ -533,11 +533,6 @@ F: Proceso Finalizado</note>
     </hop>
     <hop>
       <from>Switch / Case</from>
-      <to>Parse Tabla</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>Parse Tabla</from>
       <to>Escribir Ticket LOG</to>
       <enabled>Y</enabled>
     </hop>
@@ -618,8 +613,8 @@ F: Proceso Finalizado</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>1008</xloc>
-      <yloc>512</yloc>
+      <xloc>832</xloc>
+      <yloc>480</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -689,7 +684,7 @@ Top.Input: ${Top.Input}
       <field>
         <name>ID_TICKET</name>
         <variable>${ID_TICKET}</variable>
-        <type>String</type>
+        <type>Number</type>
         <format/>
         <currency/>
         <decimal/>
@@ -770,15 +765,15 @@ Top.Input: ${Top.Input}
     <cases>
       <case>
         <value>E</value>
-        <target_step>Parse Tabla</target_step>
+        <target_step>Escribir Ticket LOG</target_step>
       </case>
       <case>
         <value>D</value>
-        <target_step>Parse Tabla</target_step>
+        <target_step>Escribir Ticket LOG</target_step>
       </case>
       <case>
         <value>F</value>
-        <target_step>Parse Tabla</target_step>
+        <target_step>Escribir Ticket LOG</target_step>
       </case>
     </cases>
     <attributes/>
@@ -792,85 +787,6 @@ Top.Input: ${Top.Input}
     <GUI>
       <xloc>682</xloc>
       <yloc>393</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Parse Tabla</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <select_unspecified>N</select_unspecified>
-      <meta>
-        <name>ID_TICKET</name>
-        <rename>ID_TICKET</rename>
-        <type>Number</type>
-        <length>9</length>
-        <precision>16</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>REGISTRO</name>
-        <rename>REGISTRO</rename>
-        <type>String</type>
-        <length>1000</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-      <meta>
-        <name>TIPO</name>
-        <rename>TIPO</rename>
-        <type>String</type>
-        <length>1</length>
-        <precision>-2</precision>
-        <conversion_mask/>
-        <date_format_lenient>false</date_format_lenient>
-        <date_format_locale/>
-        <date_format_timezone/>
-        <lenient_string_to_number>false</lenient_string_to_number>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>832</xloc>
-      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
