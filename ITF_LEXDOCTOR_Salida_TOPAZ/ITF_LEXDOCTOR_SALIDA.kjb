@@ -1115,7 +1115,7 @@ Ruta de archivo de Salida: ${RCS}
       <type>WRITE_TO_LOG</type>
       <attributes/>
       <logmessage>***************
-Ticket: ${ID_TICKET}
+Ticket: ${Top.Repository}
 **************</logmessage>
       <loglevel>Basic</loglevel>
       <logsubject/>
