@@ -518,7 +518,7 @@ F: Proceso Finalizado</note>
   <order>
     <hop>
       <from>Obtengo Nro. Ticket  Y Mensaje</from>
-      <to>LOG Salida</to>
+      <to>Variables De Error</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
@@ -532,7 +532,7 @@ F: Proceso Finalizado</note>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>LOG Salida</from>
+      <from>Variables De Error</from>
       <to>Switch / Case</to>
       <enabled>Y</enabled>
     </hop>
@@ -633,7 +633,7 @@ F: Proceso Finalizado</note>
       <field>
         <name>ID_TICKET</name>
         <variable>${ID_TICKET}</variable>
-        <type>Number</type>
+        <type>String</type>
         <format/>
         <currency/>
         <decimal/>
@@ -740,7 +740,7 @@ F: Proceso Finalizado</note>
     </GUI>
   </step>
   <step>
-    <name>LOG Salida</name>
+    <name>Variables De Error</name>
     <type>WriteToLog</type>
     <description/>
     <distribute>Y</distribute>
