@@ -683,7 +683,7 @@ Top.Input: ${Top.Input}
     <fields>
       <field>
         <name>ID_TICKET</name>
-        <variable>${ID_TICKET}</variable>
+        <variable>${TICKET}</variable>
         <type>Number</type>
         <format/>
         <currency/>
