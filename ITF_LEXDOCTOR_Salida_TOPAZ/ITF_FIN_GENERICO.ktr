@@ -829,7 +829,7 @@ Top.Input: ${Top.Input}
         <name>REGISTRO</name>
         <rename>REGISTRO</rename>
         <type>String</type>
-        <length>-2</length>
+        <length>1000</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
@@ -846,7 +846,7 @@ Top.Input: ${Top.Input}
         <name>TIPO</name>
         <rename>TIPO</rename>
         <type>String</type>
-        <length>-2</length>
+        <length>1</length>
         <precision>-2</precision>
         <conversion_mask/>
         <date_format_lenient>false</date_format_lenient>
