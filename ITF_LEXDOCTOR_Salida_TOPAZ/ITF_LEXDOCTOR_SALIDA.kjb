@@ -404,20 +404,23 @@ Respuesta: ${msg_res}
 ----------------------------------------------------
 
 ----------------------------------------------------
-***Estado Variables Entorno General***
+***Estado Variables Entorno TOPAZ***
 ID_TICKET: ${ID_TICKET}
 Top.Repository: ${Top.Repository}
 Top.Output: ${Top.Output}
 ----------------------------------------------------
 
 ----------------------------------------------------
-***Estado Variables Entorno Especifico***
+***Estado Variables Entorno Interno***
+TICKET: ${TICKET}
+Repository: ${Repository}
+Output: ${Output}
 RCS: ${RCS}
 ----------------------------------------------------
 
 ----------------------------------------------------
 ***Estado de Parametros***
-Fecha: ${fecha}
+fecha: ${fecha}
 ----------------------------------------------------</logmessage>
       <loglevel>Error</loglevel>
       <logsubject>${cod_res}</logsubject>
