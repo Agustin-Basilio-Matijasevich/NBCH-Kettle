@@ -477,7 +477,7 @@
       <attributes_kjc/>
     </entry>
     <entry>
-      <name>ERROR Persistencia LOG</name>
+      <name>ERROR Ticket LOG (ERR)</name>
       <description/>
       <type>SET_VARIABLES</type>
       <attributes/>
@@ -1095,6 +1095,43 @@ Fecha: ${fecha}
       <yloc>736</yloc>
       <attributes_kjc/>
     </entry>
+    <entry>
+      <name>ERROR Ticket LOG</name>
+      <description/>
+      <type>SET_VARIABLES</type>
+      <attributes/>
+      <replacevars>Y</replacevars>
+      <filename/>
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+        <field>
+          <variable_name>Top.MSG</variable_name>
+          <variable_value>ERROR: Persistiendo EXITO en Ticket LOG.</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>cod_res</variable_name>
+          <variable_value>2</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>Top.TypeMSG</variable_name>
+          <variable_value>D</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>msg_res</variable_name>
+          <variable_value>TOPAZ_PROCESS_ERROR: Error persistiendo EXITO en Ticket LOG.</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>2736</xloc>
+      <yloc>592</yloc>
+      <attributes_kjc/>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -1108,7 +1145,7 @@ Fecha: ${fecha}
     </hop>
     <hop>
       <from>FIN ERROR</from>
-      <to>ERROR Persistencia LOG</to>
+      <to>ERROR Ticket LOG (ERR)</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -1287,7 +1324,7 @@ Fecha: ${fecha}
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>ERROR Persistencia LOG</from>
+      <from>ERROR Ticket LOG (ERR)</from>
       <to>Retorno ERROR</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -1375,6 +1412,24 @@ Fecha: ${fecha}
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>FIN EXITO</from>
+      <to>ERROR Ticket LOG</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ERROR Ticket LOG</from>
+      <to>Log ERROR</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>
