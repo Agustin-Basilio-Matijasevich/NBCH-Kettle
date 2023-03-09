@@ -593,7 +593,7 @@ F: Proceso Finalizado</note>
     <fields>
       <field>
         <column_name>ID_TICKET</column_name>
-        <stream_name>ID_TICKET</stream_name>
+        <stream_name>TICKET1</stream_name>
       </field>
       <field>
         <column_name>TIPO</column_name>
@@ -643,7 +643,7 @@ Top.Input: ${Top.Input}
 ----------------------------------------------------</logmessage>
     <fields>
       <field>
-        <name>ID_TICKET</name>
+        <name>TICKET1</name>
       </field>
       <field>
         <name>TIPO</name>
@@ -682,7 +682,7 @@ Top.Input: ${Top.Input}
     </partitioning>
     <fields>
       <field>
-        <name>ID_TICKET</name>
+        <name>TICKET1</name>
         <variable>${ID_TICKET}</variable>
         <type>Number</type>
         <format/>
