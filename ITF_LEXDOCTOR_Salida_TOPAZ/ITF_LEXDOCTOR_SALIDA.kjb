@@ -1109,6 +1109,23 @@ Ruta de archivo de Salida: ${RCS}
       <yloc>464</yloc>
       <attributes_kjc/>
     </entry>
+    <entry>
+      <name>Write to log</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <attributes/>
+      <logmessage>***************
+Ticket: ${ID_TICKET}
+**************</logmessage>
+      <loglevel>Basic</loglevel>
+      <logsubject/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>112</xloc>
+      <yloc>464</yloc>
+      <attributes_kjc/>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -1374,12 +1391,21 @@ Ruta de archivo de Salida: ${RCS}
     </hop>
     <hop>
       <from>Start</from>
-      <to>Set Ruta Carpeta Salida</to>
+      <to>Write to log</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
+    </hop>
+    <hop>
+      <from>Write to log</from>
+      <to>Set Ruta Carpeta Salida</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
     </hop>
   </hops>
   <notepads>
