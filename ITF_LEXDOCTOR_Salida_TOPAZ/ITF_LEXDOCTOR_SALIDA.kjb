@@ -1221,6 +1221,43 @@ Fecha: ${fecha}
       <yloc>576</yloc>
       <attributes_kjc/>
     </entry>
+    <entry>
+      <name>ERROR Seteando TICKET DEFAULT</name>
+      <description/>
+      <type>SET_VARIABLES</type>
+      <attributes/>
+      <replacevars>Y</replacevars>
+      <filename/>
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+        <field>
+          <variable_name>Top.MSG</variable_name>
+          <variable_value>ERROR: No se Puede Setear TICKET DEFAULT.</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>Top.TypeMSG</variable_name>
+          <variable_value>E</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>cod_res</variable_name>
+          <variable_value>2</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>msg_res</variable_name>
+          <variable_value>TOPAZ_PROCESS_ERROR: Error Seteando TICKET DEFAULT.</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>512</xloc>
+      <yloc>832</yloc>
+      <attributes_kjc/>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -1559,6 +1596,24 @@ Fecha: ${fecha}
     <hop>
       <from>ERROR Borrando Temporal</from>
       <to>Persistir ERROR en Ticket Log</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Set default ticket</from>
+      <to>ERROR Seteando TICKET DEFAULT</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ERROR Seteando TICKET DEFAULT</from>
+      <to>Retorno ERROR</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
