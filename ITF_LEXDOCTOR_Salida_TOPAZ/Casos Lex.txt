@@ -1,0 +1,33 @@
+traza A Estado 0 = Alta
+traza M Estado 1 = Baja
+traza M Estado 0 = Modif
+
+
+alta => Alta
+
+Baja => Baja
+
+Modif => Modif
+
+
+
+alta - baja => No Informa
+
+baja - alta => No Informa
+
+alta - modif => Alta
+
+modif - baja => Baja
+
+
+
+
+alta - modif - baja => No informa
+
+modif - baja - alta => Modif
+
+baja - alta - modif => Modif
+
+
+
+Revisar Logica orden de Bitacora en la consulta
