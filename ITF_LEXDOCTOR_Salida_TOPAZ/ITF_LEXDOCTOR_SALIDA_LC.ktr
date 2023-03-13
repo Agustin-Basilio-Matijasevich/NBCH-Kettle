@@ -548,6 +548,26 @@ V9.4</note>
     </hop>
     <hop>
       <from>Renombrado de Campos</from>
+      <to>Es baja?</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Es baja?</from>
+      <to>Set Baja</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Es baja?</from>
+      <to>Set Alta</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Set Baja</from>
+      <to>Graba Archivo Temporal</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Set Alta</from>
       <to>Graba Archivo Temporal</to>
       <enabled>Y</enabled>
     </hop>
@@ -808,8 +828,8 @@ V9.4</note>
       </output>
     </remotesteps>
     <GUI>
-      <xloc>496</xloc>
-      <yloc>288</yloc>
+      <xloc>912</xloc>
+      <yloc>304</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -850,7 +870,8 @@ FROM
 		--Generar Campo 'Nota' en Spoon 
 		cp.EMPLEADO_BC_BANCO AS Marca_Empleado, --Procesar en Spoon 
 		cp.ESTADO AS Estado, --Procesar en Spoon 
-		ROW_NUMBER () OVER (PARTITION BY cp.NUMEROPERSONAFISICA ORDER BY cp.NUMEROPERSONAFISICA) AS RN --Enumera los repetidos en un campo llamado RN 
+		ROW_NUMBER () OVER (PARTITION BY cp.NUMEROPERSONAFISICA ORDER BY cp.NUMEROPERSONAFISICA) AS RN , --Enumera los repetidos en un campo llamado RN 
+		left(cp.TZ_LOCK , 1) as LOCK 
 		 
 		from CLI_PERSONASFISICAS cp 
 		
@@ -863,7 +884,7 @@ FROM
 		left join CLI_VINCULACIONES VI ON cp.NUMEROPERSONAFISICA = VI.PERSONA_VINCULANTE AND VI.ROL = 71 AND VI.FECHA_FIN IS NULL AND VI.TZ_LOCK = 0 --Usa clave Parcial
 		left join CLI_PERSONASFISICAS cp3 ON cp3.NUMEROPERSONAFISICA = VI.PERSONA_VINCULADA AND cp3.TZ_LOCK = 0 --Usa clave completa
 
-		where cp.TZ_LOCK = 0
+		where left(cp.TZ_LOCK , 1) &lt;&gt; 1 
 		) 
 		PF --Nombre de la tabla nueva es PF 
 		--FIN SubQuery 
@@ -1290,6 +1311,29 @@ WHERE RN = 1; --Filtramos y eliminamos los repetidos quedandonos con el primer r
         <date_format_timezone>America/Buenos_Aires</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>LOCK</name>
+        <length>1</length>
+        <precision>-1</precision>
+        <origin>Leer Tabla PF</origin>
+        <comments>LOCK</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>America/Buenos_Aires</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
     </row-meta>
     <attributes/>
     <cluster_schema/>
@@ -1342,7 +1386,8 @@ FROM
 		--Generar Campo 'Nota' en Spoon 
 		'1' AS Marca_Empleado, --Procesar en Spoon 
 		cp.ESTADO AS Estado, --Procesar en Spoon 
-		ROW_NUMBER () OVER (PARTITION BY cp.NUMEROPERSONAJURIDICA ORDER BY cp.NUMEROPERSONAJURIDICA) AS RN --Enumera los repetidos en un campo llamado RN 
+		ROW_NUMBER () OVER (PARTITION BY cp.NUMEROPERSONAJURIDICA ORDER BY cp.NUMEROPERSONAJURIDICA) AS RN , --Enumera los repetidos en un campo llamado RN 
+		left(cp.TZ_LOCK , 1) as LOCK 
 
 		FROM CLI_PERSONASJURIDICAS cp 
 		
@@ -1353,7 +1398,7 @@ FROM
 		LEFT JOIN CLI_TELEFONOS ct ON cp.NUMEROPERSONAJURIDICA = ct.ID AND ct.TIPO LIKE 'LE' AND ct.FORMATO LIKE 'PJ' AND ct.TZ_LOCK = 0 --Usa clave parcial 
 		LEFT JOIN CLI_EMAILS ce ON cp.NUMEROPERSONAJURIDICA = ce.ID AND ce.TIPO LIKE 'LE' AND ce.FORMATO LIKE 'PJ' AND ce.TZ_LOCK = 0 --Usa Clave Parcial 
 		
-		where cp.TZ_LOCK = 0 
+		where left(cp.TZ_LOCK , 1) &lt;&gt; 1 
 		) 
 		PF --Nombre de la tabla nueva es PF 
 		--FIN SubQuery 
@@ -1780,6 +1825,29 @@ WHERE RN = 1; --Filtramos y eliminamos los repetidos quedandonos con el primer r
         <date_format_timezone>America/Buenos_Aires</date_format_timezone>
         <lenient_string_to_number>N</lenient_string_to_number>
       </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>LOCK</name>
+        <length>1</length>
+        <precision>-1</precision>
+        <origin>Leer Tabla PJ</origin>
+        <comments>LOCK</comments>
+        <conversion_Mask/>
+        <decimal_symbol>,</decimal_symbol>
+        <grouping_symbol>.</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>en_US</date_format_locale>
+        <date_format_timezone>America/Buenos_Aires</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
     </row-meta>
     <attributes/>
     <cluster_schema/>
@@ -1852,6 +1920,118 @@ WHERE RN = 1; --Filtramos y eliminamos los repetidos quedandonos con el primer r
     <GUI>
       <xloc>320</xloc>
       <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Es baja?</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <send_true_to>Set Baja</send_true_to>
+    <send_false_to>Set Alta</send_false_to>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>LOCK</leftvalue>
+        <function>=</function>
+        <rightvalue/>
+        <value>
+          <name>constant</name>
+          <type>String</type>
+          <text>3</text>
+          <length>-1</length>
+          <precision>-1</precision>
+          <isnull>N</isnull>
+          <mask/>
+        </value>
+      </condition>
+    </compare>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>512</xloc>
+      <yloc>288</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Set Baja</name>
+    <type>SetValueConstant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <usevar>N</usevar>
+    <fields>
+      <field>
+        <name>Estado</name>
+        <value>1</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Set Alta</name>
+    <type>SetValueConstant</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <usevar>N</usevar>
+    <fields>
+      <field>
+        <name>Estado</name>
+        <value>0</value>
+        <mask/>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>656</xloc>
+      <yloc>352</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
