@@ -2395,7 +2395,7 @@ FROM
 				left join CLI_VINCULACIONES VI ON cp.NUMEROPERSONAFISICA = VI.PERSONA_VINCULANTE AND VI.ROL = 71 AND VI.FECHA_FIN IS NULL AND VI.TZ_LOCK = 0 --Usa clave Parcial
 				left join CLI_PERSONASFISICAS cp3 ON cp3.NUMEROPERSONAFISICA = VI.PERSONA_VINCULADA AND cp3.TZ_LOCK = 0 --Usa clave completa
 		
-				where cp.TZ_LOCK = 0 
+				
 			) 
 		PF --Nombre de la tabla nueva es PF 
 		--FIN SubQuery 
@@ -3005,7 +3005,7 @@ FROM
 					LEFT JOIN CLI_TELEFONOS ct ON cp.NUMEROPERSONAJURIDICA = ct.ID AND ct.TIPO LIKE 'LE' AND ct.FORMATO LIKE 'PJ' AND ct.TZ_LOCK = 0 --Usa clave parcial 
 					LEFT JOIN CLI_EMAILS ce ON cp.NUMEROPERSONAJURIDICA = ce.ID AND ce.TIPO LIKE 'LE' AND ce.FORMATO LIKE 'PJ' AND ce.TZ_LOCK = 0 --Usa Clave Parcial 
 					
-					where cp.TZ_LOCK = 0 
+					
 				) 
 				PF --Nombre de la tabla nueva es PF 
 				--FIN SubQuery 
