@@ -831,11 +831,11 @@ V9.4</note>
     </partitioning>
     <field_to_use>Estado</field_to_use>
     <target_field>Nota</target_field>
-    <non_match_default>Habilitado</non_match_default>
+    <non_match_default>HABILITADO</non_match_default>
     <fields>
       <field>
         <source_value>1</source_value>
-        <target_value>Inhabilitado</target_value>
+        <target_value>INHABILITADO</target_value>
       </field>
     </fields>
     <attributes/>
