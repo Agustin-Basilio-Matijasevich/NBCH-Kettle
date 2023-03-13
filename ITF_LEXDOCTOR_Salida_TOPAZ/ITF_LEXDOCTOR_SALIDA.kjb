@@ -872,7 +872,7 @@ Fecha: ${fecha}
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1296</xloc>
+      <xloc>1360</xloc>
       <yloc>464</yloc>
       <attributes_kjc/>
     </entry>
@@ -948,7 +948,7 @@ Fecha: ${fecha}
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1296</xloc>
+      <xloc>1360</xloc>
       <yloc>608</yloc>
       <attributes_kjc/>
     </entry>
@@ -1328,6 +1328,56 @@ Fecha: ${fecha}
       <yloc>1040</yloc>
       <attributes_kjc/>
     </entry>
+    <entry>
+      <name>Existe Temporal</name>
+      <description/>
+      <type>FILE_EXISTS</type>
+      <attributes/>
+      <filename>${Top.Output}LexDoctor/TEMPORAL.csv</filename>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1248</xloc>
+      <yloc>496</yloc>
+      <attributes_kjc/>
+    </entry>
+    <entry>
+      <name>Sin Novedades</name>
+      <description/>
+      <type>SET_VARIABLES</type>
+      <attributes/>
+      <replacevars>Y</replacevars>
+      <filename/>
+      <file_variable_type>JVM</file_variable_type>
+      <fields>
+        <field>
+          <variable_name>Top.MSG</variable_name>
+          <variable_value>ERROR: Procesamiento. => Sin Novedades en la fecha ingresada.</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>Top.TypeMSG</variable_name>
+          <variable_value>E</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>cod_res</variable_name>
+          <variable_value>2</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
+        <field>
+          <variable_name>msg_res</variable_name>
+          <variable_value>TOPAZ_PROCESS_ERROR: Sin registros que informar para la fecha indicada.</variable_value>
+          <variable_type>ROOT_JOB</variable_type>
+        </field>
+      </fields>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1184</xloc>
+      <yloc>640</yloc>
+      <attributes_kjc/>
+    </entry>
   </entries>
   <hops>
     <hop>
@@ -1427,15 +1477,6 @@ Fecha: ${fecha}
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>N</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Filtrada por Fecha</from>
-      <to>Parse y Grabado</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
     <hop>
@@ -1726,6 +1767,42 @@ Fecha: ${fecha}
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
+    <hop>
+      <from>Filtrada por Fecha</from>
+      <to>Existe Temporal</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Existe Temporal</from>
+      <to>Parse y Grabado</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Existe Temporal</from>
+      <to>Sin Novedades</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Sin Novedades</from>
+      <to>Existe Ticket</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
   </hops>
   <notepads>
     <notepad>
@@ -1766,8 +1843,8 @@ Configuracion entorno TOPAZ:
 Asegurarse de no haber añadido un step que fuerze valores para las variables de entorno.</note>
       <xloc>448</xloc>
       <yloc>0</yloc>
-      <width>476</width>
-      <heigth>215</heigth>
+      <width>603</width>
+      <heigth>270</heigth>
       <fontname>Segoe UI</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
@@ -1880,8 +1957,8 @@ ITF_RETORNO_GENERICO.ktr
 ITF_FIN_GENERICO.ktr</note>
       <xloc>0</xloc>
       <yloc>80</yloc>
-      <width>335</width>
-      <heigth>154</heigth>
+      <width>423</width>
+      <heigth>190</heigth>
       <fontname>Segoe UI</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
@@ -1944,8 +2021,8 @@ V9.4</note>
       <note>FIN Tareas POST Procesamiento</note>
       <xloc>1904</xloc>
       <yloc>336</yloc>
-      <width>177</width>
-      <heigth>26</heigth>
+      <width>218</width>
+      <heigth>30</heigth>
       <fontname>Segoe UI</fontname>
       <fontsize>9</fontsize>
       <fontbold>N</fontbold>
